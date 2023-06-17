@@ -11,7 +11,7 @@ npm start
 my-t3-app
 ```bash
 npm install
-npm start
+npm run dev
 ```
 
 ### Cadastro de produtos
@@ -43,5 +43,18 @@ const ProdutoSchema = new mongoose.Schema({
 ```
 
 ## Imagens dos furmulários
-![formulário em português](form-pt.png)
-![Formulário em inglês](form-en.png)
+#### Home
+![pagina principal em inglês](home-en.png)
+![pagina principal em português](home-pt.png)
+#### Enviar produto
+![formulário em português](formEnviar-en.png)
+![Formulário em inglês](formEnviar-pt.png)
+#### Atualizar
+![formulário em português](formAtualizar-en.png)
+![Formulário em inglês](formAtualizar-pt.png)
+#### Deletar
+![formulário em português](formDeletar-en.png)
+![Formulário em inglês](formDeletar-pt.png)
+#### Listar
+![formulário em português](formListar-en.png)
+![Formulário em inglês](formListar-pt.png)

@@ -5,8 +5,9 @@ import { useForm } from "react-hook-form";
 import { api } from "~/utils/api";
 import  Atualizar  from "./Atualizar";
 import  Pegar from "./Pegar";
-import  Deletar  from "./delete";
-import  Enviar  from "./enviar";
+import Deletar from "./Delete";
+
+import  Enviar  from "./Enviar";
 
 const Home: NextPage = () => {
   //const hello = api.example.hello.useQuery({ text: "from tRPC" });
@@ -36,15 +37,15 @@ const Home: NextPage = () => {
           </h1>
          <div className="flex flex-row gap-4 items-center justify-center">
             
-            {activeForm === "Atualizar" && <Atualizar />}
-             {activeForm === "Deletar" && <Deletar />}
-              {activeForm === "Pegar" && <Pegar />}
-              {activeForm === "Enviar" && <Enviar />}
+            {activeForm === "Atualizar" && <Atualizar lang={language}/>}
+              {activeForm === "Enviar" && <Enviar  lang={language}/>}
+             {activeForm === "Deletar" && <Deletar lang={language}/>}
+              {activeForm === "Pegar" && <Pegar lang={language}/>}
             <div className="flex flex-col items-center justify-center gap-4">
-            <button onClick={() => handleFormChange("Enviar")} className="rounded-lg bg-red-600 text-2xl font-bold">{language === "pt" ? "Enviar": "Submit"}</button>
-            <button onClick={() => handleFormChange("Pegar")} className="rounded-lg bg-red-600 text-2xl font-bold">{language === "pt" ? "Atualizar": "Update"}</button>
-            <button onClick={() => handleFormChange("Deletar")} className="rounded-lg bg-red-600 text-2xl font-bold">{language === "pt" ? "deletar": "delete"}</button>
-            <button onClick={() => handleFormChange("Atualizar")} className="rounded-lg bg-red-600 text-2xl font-bold">{language === "pt" ? "Lista de Produtos": "list of Itens"}</button>
+            <button onClick={() => handleFormChange("Enviar")} className="p-2 rounded-lg bg-red-600 text-2xl font-bold">{language === "pt" ? "Enviar": "Submit"}</button>
+            <button onClick={() => handleFormChange("Atualizar")} className="p-2 rounded-lg bg-red-600 text-2xl font-bold">{language === "pt" ? "Atualizar": "Update"}</button>
+            <button onClick={() => handleFormChange("Deletar")} className="p-2 rounded-lg bg-red-600 text-2xl font-bold">{language === "pt" ? "deletar": "delete"}</button>
+            <button onClick={() => handleFormChange("Pegar")} className="p-2 rounded-lg bg-red-600 text-2xl font-bold">{language === "pt" ? "Lista de Produtos": "list of Itens"}</button>
             </div>
         
 
@@ -53,7 +54,7 @@ const Home: NextPage = () => {
 
 
             </div>
-          <button onClick={toggleLanguage} className="text-white hover:underline">
+          <button onClick={toggleLanguage} className="text-white hover:underline bg-orange-400 rounded-lg p-2">
             {language === "pt" ? "Switch to English" : "Alternar para Português"}
           </button>
         </div>
